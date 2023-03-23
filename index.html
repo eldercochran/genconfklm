@@ -30,11 +30,21 @@
   
   div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr
+    grid-template-columns: 1fr 1fr 1fr 1fr
+  }
+  @media only screen and (max-width: 1920px) {
+    div {
+      grid-template-columns: 1fr 1fr 1fr
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    div {
+      grid-template-columns: 1fr 1fr
+    }
   }
   @media only screen and (max-width: 640px) {
     div {
-      grid-template-columns: 1fr 1fr
+      grid-template-columns: 1fr
     }
   }
   a:hover {
