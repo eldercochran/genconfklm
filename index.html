@@ -1,134 +1,149 @@
 <!DOCTYPE html>
 <head>
-	<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-52ZC7DD');</script>
-<!-- End Google Tag Manager -->
-	<script>
-/**
-* Function that captures a click on an outbound link in Analytics.
-* This function takes a valid URL string as an argument, and uses that URL string
-* as the event label. Setting the transport method to 'beacon' lets the hit be sent
-* using 'navigator.sendBeacon' in browser that support it.
-*/
-var captureOutboundLink = function(url) {
-   ga('send', 'event', 'outbound', 'click', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){document.location = url;}
-   });
-}
-</script>
-   <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-52ZC7DD');
+  </script>
+  <!-- End Google Tag Manager -->
+  <script>
+    /**
+     * Function that captures a click on an outbound link in Analytics.
+     * This function takes a valid URL string as an argument, and uses that URL string
+     * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+     * using 'navigator.sendBeacon' in browser that support it.
+     */
+    var captureOutboundLink = function(url) {
+      ga('send', 'event', 'outbound', 'click', url, {
+        'transport': 'beacon',
+        'hitCallback': function() {
+          document.location = url;
+        }
+      });
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-      body {
-	      font-family: 'Roboto', sans-serif;
-	      color: blue;
-	      font-size: 50px;
-      }
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: blue;
+      font-size: 50px;
+    }
 
-      a {
-      	background-color: blue;
-      	border-radius: 20px;
-      	border-color: blue;
-      	border-style: solid;
-      	border-width: 2px;
-      	padding: 5px;
-       	color: white;
-	      margin: 5px;
-      	text-decoration: none;
-	      transition: 500ms;
-      	text-align: center;
-      }
+    a {
+      background-color: blue;
+      border-radius: 20px;
+      border-color: blue;
+      border-style: solid;
+      border-width: 2px;
+      padding: 5px;
+      color: white;
+      margin: 5px;
+      text-decoration: none;
+      transition: 500ms;
+      text-align: center;
+    }
 
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr
+    }
+
+    @media only screen and (max-width: 1800px) {
       div {
-      	display: grid;
-      	grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-template-columns: 1fr 1fr 1fr
       }
+    }
 
-      @media only screen and (max-width: 1800px) {
-      	div {
-	      	grid-template-columns: 1fr 1fr 1fr
-	      }
+    @media only screen and (max-width: 1000px) {
+      div {
+        grid-template-columns: 1fr 1fr
       }
+    }
 
-      @media only screen and (max-width: 1000px) {
-	      div {
-	      	grid-template-columns: 1fr 1fr
-	      }
+    @media only screen and (max-width: 640px) {
+      div {
+        grid-template-columns: 1fr
       }
+    }
 
-      @media only screen and (max-width: 640px) {
-      	div {
-      		grid-template-columns: 1fr
-      	}
-      }
+    a:hover {
+      background-color: white;
+      color: blue;
+    }
 
-      a:hover {
-	      background-color: white;
-	      color: blue;
-      }
+    h1 {
+      font-size: 60;
+      background-color: blue;
+      border-radius: 20px;
+      border-color: blue;
+      border-style: solid;
+      border-width: 2px;
+      color: white;
+    }
 
-      h1 {
-      	font-size: 60;
-      	background-color: blue;
-      	border-radius: 20px;
-      	border-color: blue;
-      	border-style: solid;
-      	border-width: 2px;
-      	color: white;
-      }
+    li {
+      margin-top: 20px;
+    }
 
-      li {
-      	margin-top: 20px;
-      }
+    ul {
+      width: 100vw;
+      margin: 0px;
+    }
 
-      ul {
-      	width: 100vw;
-      	margin: 0px;
-      }
+    a:active {
+      text-decoration: none;
+    }
 
-      a:active {
-	      text-decoration: none;
-      }
-
-      ul {
-	      list-style-type: none;
-      }
-   </style>
+    ul {
+      list-style-type: none;
+    }
+  </style>
 </head>
 <body>
-	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZC7DD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5CBH73KM3"></script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', 'G-E5CBH73KM3');
-   </script>
-   <h1> Saturday April 1st</h1>
-   <div>
-      <a href="https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=eng" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=eng')> English </a>
-      <a href="https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=spa"onclick="captureOutboundLink('https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=spa')> Español </a>
-      <a href="https://www.churchofjesuschrist.org/broadcasts?lang=fra&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=fra&video=47332645508129727580&mode=watch')> Français </a>
-      <a href="https://www.churchofjesuschrist.org/broadcasts?lang=mah&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=mah&video=47332645508129727580&mode=watch')> Kajin Majol </a>
-      <a href="https://www.churchofjesuschrist.org/broadcasts?lang=swa&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=swa&video=47332645508129727580&mode=watch')> Kiswahili </a>
-      <a href="https://www.churchofjesuschrist.org/broadcasts?lang=hat&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=hat&video=47332645508129727580&mode=watch')> Kreyòl Ayisyen </a>
-   </div>
-   <h1> Sunday April 2nd</h1>
-   <div>
-      <a href="https://www.churchofjesuschrist.org/media/broadcasts/watch-sunday-live-sessions-including-music-amp-the-spoken-word?lang=eng" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=eng')> English </a>
-      <a href="https://www.churchofjesuschrist.org/media/broadcasts/watch-sunday-live-sessions-including-music-amp-the-spoken-word?lang=spa" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=spa')> Español </a>
-      <a href="https://www.churchofjesuschrist.org/broadcasts?lang=fra&video=50049698897606926280&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=fra&video=47332645508129727580&mode=watch')> Français </a>
-      <a href="https://www.churchofjesuschrist.org/broadcasts?lang=mah&video=50049698897606926280&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=mah&video=47332645508129727580&mode=watch')> Kajin Majol </a>
-      <a href="https://www.churchofjesuschrist.org/broadcasts?lang=swa&video=50049698897606926280&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=swa&video=47332645508129727580&mode=watch')> Kiswahili </a>
-      <a href="https://www.churchofjesuschrist.org/broadcasts?lang=hat&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=hat&video=47332645508129727580&mode=watch')> Kreyòl Ayisyen </a>
-   </div>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZC7DD" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5CBH73KM3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-E5CBH73KM3');
+  </script>
+  <h1> Saturday April 1st</h1>
+  <div>
+    <a href="https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=eng" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=eng'")> English </a>
+		<a href=" https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=spa" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=spa')"> Español </a>
+		<a href=" https://www.churchofjesuschrist.org/broadcasts?lang=fra&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=fra&video=47332645508129727580&mode=watch')"> Français </a>
+		<a href=" https://www.churchofjesuschrist.org/broadcasts?lang=mah&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=mah&video=47332645508129727580&mode=watch')"> Kajin Majol </a>
+		<a href=" https://www.churchofjesuschrist.org/broadcasts?lang=swa&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=swa&video=47332645508129727580&mode=watch')"> Kiswahili </a>
+		<a href=" https://www.churchofjesuschrist.org/broadcasts?lang=hat&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=hat&video=47332645508129727580&mode=watch')"> Kreyòl Ayisyen </a>
+	</div>
+	<h1> Sunday April 2nd</h1>
+	<div>
+		<a href=" https://www.churchofjesuschrist.org/media/broadcasts/watch-sunday-live-sessions-including-music-amp-the-spoken-word?lang=eng" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=eng')"> English </a>
+		<a href=" https://www.churchofjesuschrist.org/media/broadcasts/watch-sunday-live-sessions-including-music-amp-the-spoken-word?lang=spa" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/media/broadcasts/watch-saturday-live-sessions-april?lang=spa')"> Español </a>
+		<a href=" https://www.churchofjesuschrist.org/broadcasts?lang=fra&video=50049698897606926280&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=fra&video=47332645508129727580&mode=watch')"> Français </a>
+		<a href=" https://www.churchofjesuschrist.org/broadcasts?lang=mah&video=50049698897606926280&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=mah&video=47332645508129727580&mode=watch')"> Kajin Majol </a>
+		<a href=" https://www.churchofjesuschrist.org/broadcasts?lang=swa&video=50049698897606926280&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=swa&video=47332645508129727580&mode=watch')"> Kiswahili </a>
+		<a href=" https://www.churchofjesuschrist.org/broadcasts?lang=hat&video=47332645508129727580&mode=watch" onclick="captureOutboundLink('https://www.churchofjesuschrist.org/broadcasts?lang=hat&video=47332645508129727580&mode=watch')"> Kreyòl Ayisyen </a>
+	</div>
 </body>
